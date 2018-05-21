@@ -58,7 +58,7 @@ defaultContentLanguageInSubdir = false
   organizations = [ { name = "UC Berkeley", url = "//eecs.berkeley.edu" } ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
-  avatar = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
+  avatar = "karl.png"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   email = "karlk at berkeley dot edu"
   address = "537 Soda Hall"
   office_hours = ""
