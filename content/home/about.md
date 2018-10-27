@@ -35,6 +35,6 @@ weight = 5
 
 # Biography
 
-I am a first year PhD student 
+I am a second year PhD student in [computer science](https://eecs.berkeley.edu/) at the University of California, Berkeley, advised by [Jonathan Ragan-Kelley](https://people.eecs.berkeley.edu/~jrk/) and [Michael I. Jordan](https://people.eecs.berkeley.edu/~jordan/). I am a member of the [RISELab](https://rise.cs.berkeley.edu/) and [Berkeley AI Research](https://bair.berkeley.edu/).
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 
+Prior to coming to Berkeley I completed my undergraduate degree in computer science at the University of New South Wales where I was supervised by [Gernot Heiser](http://gernot-heiser.org/) for my honour's thesis. I also had the good fortune of working with [Edwin Bonilla](http://ebonilla.github.io/) as a research assistant.
