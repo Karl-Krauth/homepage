@@ -1,6 +1,6 @@
 +++
 title = "Generic Inference in Latent Gaussian Process Models"
-date = 2016-09-02T00:00:00
+date = 2019-03-01T00:00:00
 authors = ['Edwin Bonilla\*', 'Karl Krauth\*', 'Amir Dezfouli']
 publication_types = ["2"]
 publication = "In *Journal of Machine Learning Research.*"
