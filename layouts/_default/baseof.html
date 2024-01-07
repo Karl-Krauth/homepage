@@ -1,0 +1,242 @@
+<!doctype html>
+<html class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="robots" content="index, follow" />
+    <title>
+      {{ if and (not .IsHome) .Title }}
+        {{ .Title }} |
+      {{ end }}
+      {{ site.Title }}
+    </title>
+
+    <meta
+      name="description"
+      content="{{ .Description | default site.Params.Description }}" />
+    <meta name="author" content="Karl Krauth" />
+    {{/* TODO: Search */}}
+    {{/* TODO: Favicons */}}
+    {{/* TODO: RSS */}}
+
+    {{/* TODO: Google Analytics */}}
+    {{/* TODO: Opengraph */}}
+    {{/* TODO: Twitter cards */}}
+    {{/* TODO: JSON schema */}}
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+  </head>
+
+  <body class="antialiased min-h-full bg-white dark:bg-slate-900">
+    <header
+      class="sticky top-0 w-full backdrop-blur flex-none z-50 border-b border-slate-900/10 dark:border-slate-50/[0.06] bg-white/95 dark:bg-slate-900/95">
+      <div
+        class="relative flex items-center max-w-8xl mx-auto py-4 px-4 md:px-8">
+        <a
+          class="mr-3 flex-none overflow-hidden w-auto text-slate-900 dark:text-white hover:text-sky-500 dark:hover:text-sky-400 text-xl font-semibold"
+          href="/"
+          accesskey="h"
+          title="Home (Alt + H)"
+          >Home</a
+        >
+
+        <div class="relative hidden md:flex items-center ml-auto">
+          <nav
+            class="text-sm leading-6 font-semibold text-slate-700 dark:text-slate-200">
+            <ul class="flex space-x-8">
+              <li>
+                <a
+                  class="hover:text-sky-500 dark:hover:text-sky-400"
+                  href="/categories"
+                  >Categories</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-sky-500 dark:hover:text-sky-400"
+                  href="/posts"
+                  >Posts</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div
+          class="flex items-center border-l border-slate-200 ml-6 pl-6 dark:border-slate-800">
+          <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+            <span
+              class="hidden dark:inline text-slate-400 hover:text-slate-300">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </span>
+            <span class="dark:hidden text-slate-400 hover:text-slate-500">
+              <svg
+                class="dark:hidden"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </span>
+          </button>
+        </div>
+        <div class="ml-auto -my-1 md:hidden">
+          <button
+            type="button"
+            class="text-slate-500 w-8 h-8 flex items-center justify-center hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">
+            <svg width="24" height="24" fill="none" aria-hidden="true">
+              <path
+                d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="max-w-8xl mx-auto px-4 sm:px-6 md:px-8 z-20 pt-10">
+        {{ block "main" . }}{{ end }}
+      </div>
+    </main>
+
+    <script>
+      if (localStorage.getItem("pref-theme") === "dark") {
+        document.children[0].classList.add("dark");
+      } else if (localStorage.getItem("pref-theme") === "light") {
+        document.children[0].classList.remove("dark");
+      } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.children[0].classList.add("dark");
+      }
+    </script>
+
+    <script>
+      let menu = document.getElementById("menu");
+      if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+          localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        };
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          var id = this.getAttribute("href").substr(1);
+          if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            document
+              .querySelector(`[id='${decodeURIComponent(id)}']`)
+              .scrollIntoView({
+                behavior: "smooth",
+              });
+          } else {
+            document
+              .querySelector(`[id='${decodeURIComponent(id)}']`)
+              .scrollIntoView();
+          }
+          if (id === "top") {
+            history.replaceState(null, null, " ");
+          } else {
+            history.pushState(null, null, `#${id}`);
+          }
+        });
+      });
+    </script>
+
+    <script>
+      document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.children[0].className.includes("dark")) {
+          document.children[0].classList.remove("dark");
+          localStorage.setItem("pref-theme", "light");
+        } else {
+          document.children[0].classList.add("dark");
+          localStorage.setItem("pref-theme", "dark");
+        }
+      });
+    </script>
+
+    {{- if (and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search")) }}
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '{{- i18n "code_copy" | default "copy" }}';
+
+        function copyingDone() {
+            copybutton.innerHTML = '{{- i18n "code_copied" | default "copied!" }}';
+            setTimeout(() => {
+                copybutton.innerHTML = '{{- i18n "code_copy" | default "copy" }}';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            // td containing LineNos
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            // table containing LineNos and code
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            // code blocks not having highlight as parent class
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+    {{- end }}
+  </body>
+</html>
