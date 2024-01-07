@@ -1,8 +1,8 @@
 {{ define "main" }}
   <div class="max-w-3xl mx-auto sm:text-lg text-slate-700 dark:text-slate-300">
-    <div class="flex gap-10 items-start">
+    <div class="flex flex-col sm:flex-row gap-10 items-start">
       <div
-        class="flex flex-col items-center text-center bg-slate-100 rounded-xl p-6  dark:bg-slate-800">
+        class="flex flex-col items-center text-center self-center sm:self-auto bg-slate-100 rounded-xl p-6  dark:bg-slate-800">
         {{ $img := resources.Get "headshot.jpg" }}
         {{ $img = $img.Fill "300x300" }}
         <img
@@ -39,16 +39,15 @@
           About
         </h2>
         <div>
-          <p>
+          <p class="mt-4">
             I'm a postdoc at Stanford in Polly Fordyce's lab. I create
             microfluidic devices, large-scale datasets, and machine learning
             algorithms to understand molecular biology.
           </p>
 
-          <p>
+          <p class="mt-4">
             I did my PhD in computer science at UC Berkeley with Michael I.
-            Jordan, where I studied machine learning systems with a data-centric
-            focus.
+            Jordan, where I studied machine learning systems from a data-centric perspective.
           </p>
         </div>
       </div>
