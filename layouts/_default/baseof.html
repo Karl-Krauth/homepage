@@ -35,40 +35,75 @@
 
   <body class="antialiased min-h-full bg-white dark:bg-slate-900">
     <header
-      class="sticky top-0 w-full backdrop-blur flex-none z-50 border-b border-slate-900/10 dark:border-slate-50/[0.06] bg-white/95 dark:bg-slate-900/95">
-      <div
-        class="relative flex items-center max-w-8xl mx-auto py-4 px-4 md:px-8">
-        <a
-          class="mr-3 flex-none overflow-hidden w-auto text-slate-900 dark:text-white hover:text-sky-500 dark:hover:text-sky-400 text-xl font-semibold"
-          href="/"
-          accesskey="h"
-          title="Home (Alt + H)"
-          >Home</a
-        >
+      class="sticky top-0 w-full backdrop-blur z-50 border-b border-slate-900/10 dark:border-slate-50/[0.06] bg-white/95 dark:bg-slate-900/95">
+      <div class="flex items-center max-w-8xl mx-auto py-4 px-4 md:px-8">
+        <nav class="text-slate-900 dark:text-white col-start-2">
+          <ul class="flex gap-x-8">
+            <li>
+              <a
+                class="hover:text-sky-500 dark:hover:text-sky-400"
+                href="/"
+                accesskey="h"
+                title="Home (Alt + H)">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9" />
+                  <path d="M9 22V12h6v10M2 10.6L12 2l10 8.6" />
+                </svg>
+              </a>
+            </li>
 
-        <div class="relative hidden md:flex items-center ml-auto">
-          <nav
-            class="text-sm leading-6 font-semibold text-slate-700 dark:text-slate-200">
-            <ul class="flex space-x-8">
-              <li>
-                <a
-                  class="hover:text-sky-500 dark:hover:text-sky-400"
-                  href="/categories"
-                  >Categories</a
-                >
-              </li>
-              <li>
-                <a
-                  class="hover:text-sky-500 dark:hover:text-sky-400"
-                  href="/posts"
-                  >Posts</a
-                >
-              </li>
-            </ul>
-          </nav>
-        </div>
+            <li>
+              <a
+                class="hover:text-sky-500 dark:hover:text-sky-400"
+                href="/posts">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
+                  <path d="M14 3v5h5M16 13H8M16 17H8M10 9H8" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-sky-500 dark:hover:text-sky-400"
+                href="/categories">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
         <div
-          class="flex items-center border-l border-slate-200 ml-6 pl-6 dark:border-slate-800">
+          class="flex items-center ml-auto justify-self-end border-l border-slate-200 pl-6 dark:border-slate-800">
           <button id="theme-toggle" accesskey="t" title="(Alt + T)">
             <span
               class="hidden dark:inline text-slate-400 hover:text-slate-300">
@@ -88,7 +123,6 @@
             </span>
             <span class="dark:hidden text-slate-400 hover:text-slate-500">
               <svg
-                class="dark:hidden"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="18"
@@ -109,20 +143,6 @@
                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
               </svg>
             </span>
-          </button>
-        </div>
-        <div class="ml-auto -my-1 md:hidden">
-          <button
-            type="button"
-            class="text-slate-500 w-8 h-8 flex items-center justify-center hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">
-            <svg width="24" height="24" fill="none" aria-hidden="true">
-              <path
-                d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-            </svg>
           </button>
         </div>
       </div>
