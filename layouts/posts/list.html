@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <div class="max-w-3xl mx-auto sm:text-lg text-slate-700 dark:text-slate-300">
+    <div>
+      <h2 class="font-bold text-slate-900 dark:text-white text-2xl sm:text-3xl">
+        Posts
+      </h2>
+      <ul class="flex flex-col gap-4 mt-4 sm:text-lg">
+      {{ range .Pages }}
+        <li>
+            <a
+              class="text-slate-900 dark:text-white underline hover:text-sky-500 dark:hover:text-sky-400"
+              href="{{ .RelPermalink }}"
+              >{{ .LinkTitle }}</a
+            >
+        </li>
+      {{ end }}
+      </ul>
+    </div>
+  </div>
+{{- end }}{{- /* end main */ -}}
