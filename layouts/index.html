@@ -18,19 +18,50 @@
           Bio/ML Researcher
         </h3>
         <ul class="flex gap-3 sm:gap-4 mt-4">
-          {{ range site.Params.socialIcons }}
-            <li
-              class="w-6 h-6 sm:w-7 sm:h-7 text-slate-900 dark:text-white hover:text-sky-500 dark:hover:text-sky-400">
-              <a
-                href="{{ trim .url " " | safeURL }}"
-                target="_blank"
-                rel="noopener noreferrer me"
-                title="{{ (.title | default .name) | title }}"
-                style="text-align: center;">
-                {{ partial "svg.html" . }}
-              </a>
-            </li>
-          {{- end }}
+          <li
+            class="w-6 h-6 sm:w-7 sm:h-7 text-slate-900 dark:text-white hover:text-sky-500 dark:hover:text-sky-400">
+            <a
+              href="mailto: kkt at stanford.edu"
+              target="_blank"
+              rel="noopener noreferrer me"
+              title="Email"
+              style="text-align: center;">
+              {{ partial "svg.html" "email" }}
+            </a>
+          </li>
+          <li
+            class="w-6 h-6 sm:w-7 sm:h-7 text-slate-900 dark:text-white hover:text-sky-500 dark:hover:text-sky-400">
+            <a
+              href="https://twitter.com/Krauth"
+              target="_blank"
+              rel="noopener noreferrer me"
+              title="Twitter"
+              style="text-align: center;">
+              {{ partial "svg.html" "twitter" }}
+            </a>
+          </li>
+          <li
+            class="w-6 h-6 sm:w-7 sm:h-7 text-slate-900 dark:text-white hover:text-sky-500 dark:hover:text-sky-400">
+            <a
+              href="https://scholar.google.com/citations?user=qq4zSmQAAAAJ"
+              target="_blank"
+              rel="noopener noreferrer me"
+              title="Google Scholar"
+              style="text-align: center;">
+              {{ partial "svg.html" "googlescholar" }}
+            </a>
+          </li>
+          <li
+            class="w-6 h-6 sm:w-7 sm:h-7 text-slate-900 dark:text-white hover:text-sky-500 dark:hover:text-sky-400">
+            <a
+              href="https://github.com/Karl-Krauth"
+              target="_blank"
+              rel="noopener noreferrer me"
+              title="Github"
+              style="text-align: center;">
+              {{ partial "svg.html" "github" }}
+            </a>
+          </li>
         </ul>
       </div>
       <div>
